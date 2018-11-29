@@ -42,9 +42,9 @@ public class ActivityTest2 {
     private CompanyDao mCompany;
     private NoteDao mNoteDao;
     private NoteRoomDatabase mDb;
-    private EmployeeDao mEmployeeDao;
-    private DepartmentDao departmentDao;
-    private CompanyDepartmentsDao compDepartDao;
+    //private EmployeeDao mEmployeeDao;
+    //private DepartmentDao departmentDao;
+    //private CompanyDepartmentsDao compDepartDao;
 
     @Before
     public void createDb() {
@@ -54,9 +54,9 @@ public class ActivityTest2 {
                 .build();
         mNoteDao = mDb.noteDao();
         mCompany = mDb.companyDao();
-        mEmployeeDao = mDb.employeeDao();
-        departmentDao = mDb.departmentDao();
-        compDepartDao = mDb.companyAndAllDepartmentsDao();
+        //mEmployeeDao = mDb.employeeDao();
+        //departmentDao = mDb.departmentDao();
+        //compDepartDao = mDb.companyAndAllDepartmentsDao();
 
     }
 
