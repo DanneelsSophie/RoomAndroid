@@ -19,8 +19,8 @@ import java.util.List;
 import lille.learn.room.activity2.Location;
 import lille.learn.room.activity2.dao.CompanyDao;
 //import lille.learn.room.activity2.dao.CompanyDepartmentsDao;
-//import lille.learn.room.activity2.dao.DepartmentDao;
-//import lille.learn.room.activity2.dao.EmployeeDao;
+import lille.learn.room.activity2.dao.DepartmentDao;
+import lille.learn.room.activity2.dao.EmployeeDao;
 import lille.learn.room.activity2.model.Company;
 //import lille.learn.room.activity2.model.CompanyAndAllDepartments;
 import lille.learn.room.activity2.model.Department;
@@ -42,8 +42,8 @@ public class ActivityTest2 {
     private CompanyDao mCompany;
     private NoteDao mNoteDao;
     private NoteRoomDatabase mDb;
-    //private EmployeeDao mEmployeeDao;
-    //private DepartmentDao departmentDao;
+    private EmployeeDao mEmployeeDao;
+    private DepartmentDao departmentDao;
     //private CompanyDepartmentsDao compDepartDao;
 
     @Before
