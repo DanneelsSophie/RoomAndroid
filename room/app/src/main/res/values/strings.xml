@@ -1,0 +1,10 @@
+
+
+<resources>
+    <string name="app_name">RoomNoteSample</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_note">Note…</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Note not saved because it is empty.</string>
+    <string name="title_activity_update_note">UpdateNote</string>
+</resources>
