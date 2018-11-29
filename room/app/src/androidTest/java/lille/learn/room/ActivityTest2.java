@@ -93,7 +93,7 @@ public class ActivityTest2 {
         assertEquals(d,companies.get(1).getItemUpdatedDate());
     }
 
-    @Test
+    /**@Test
     public void insertAndGetEmployee() throws Exception {
         Company c = new Company();
         Date d = new Date("08/03/1992");
@@ -203,6 +203,7 @@ public class ActivityTest2 {
 
     }
 
+    **/
 
 
 }
