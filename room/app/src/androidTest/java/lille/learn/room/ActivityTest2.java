@@ -18,11 +18,11 @@ import java.util.List;
 
 import lille.learn.room.activity2.Location;
 import lille.learn.room.activity2.dao.CompanyDao;
-import lille.learn.room.activity2.dao.CompanyDepartmentsDao;
+//import lille.learn.room.activity2.dao.CompanyDepartmentsDao;
 import lille.learn.room.activity2.dao.DepartmentDao;
 import lille.learn.room.activity2.dao.EmployeeDao;
 import lille.learn.room.activity2.model.Company;
-import lille.learn.room.activity2.model.CompanyAndAllDepartments;
+//import lille.learn.room.activity2.model.CompanyAndAllDepartments;
 import lille.learn.room.activity2.model.Department;
 import lille.learn.room.activity2.model.Employee;
 import lille.learn.room.dao.NoteDao;
@@ -44,7 +44,7 @@ public class ActivityTest2 {
     private NoteRoomDatabase mDb;
     private EmployeeDao mEmployeeDao;
     private DepartmentDao departmentDao;
-    private CompanyDepartmentsDao compDepartDao;
+    //private CompanyDepartmentsDao compDepartDao;
 
     @Before
     public void createDb() {
@@ -54,9 +54,9 @@ public class ActivityTest2 {
                 .build();
         mNoteDao = mDb.noteDao();
         mCompany = mDb.companyDao();
-        mEmployeeDao = mDb.employeeDao();
-        departmentDao = mDb.departmentDao();
-        compDepartDao = mDb.companyAndAllDepartmentsDao();
+        //mEmployeeDao = mDb.employeeDao();
+        //departmentDao = mDb.departmentDao();
+        //compDepartDao = mDb.companyAndAllDepartmentsDao();
 
     }
 

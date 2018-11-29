@@ -8,15 +8,21 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
+import lille.learn.room.activity2.dao.CompanyDao;
+import lille.learn.room.activity2.model.Company;
 import lille.learn.room.dao.NoteDao;
 import lille.learn.room.model.Note;
 
-@Database(entities = {Note.class}, version = 1, exportSchema = false)
+@Database(entities = {Note.class, Company.class}, version = 1, exportSchema = false)
 public abstract class NoteRoomDatabase extends RoomDatabase {
 
     // Les Daos
     //first activity
     public abstract NoteDao noteDao();
+
+
+    //second activity
+    public abstract CompanyDao companyDao();
 
     // Un Singleton
     private static volatile NoteRoomDatabase INSTANCE;
@@ -51,9 +57,11 @@ public abstract class NoteRoomDatabase extends RoomDatabase {
 
         private final NoteDao mDao;
 
+        private final CompanyDao cDao;
 
         PopulateDbAsync(NoteRoomDatabase db) {
             mDao = db.noteDao();
+            cDao = db.companyDao();
         }
 
         //création des données qui sera de base dans l'application
