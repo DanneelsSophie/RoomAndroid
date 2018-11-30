@@ -19,6 +19,7 @@ import java.util.List;
 import lille.learn.room.activity2.Location;
 import lille.learn.room.activity2.dao.CompanyDao;
 //import lille.learn.room.activity2.dao.CompanyDepartmentsDao;
+import lille.learn.room.activity2.dao.CompanyDepartmentsDao;
 import lille.learn.room.activity2.dao.DepartmentDao;
 import lille.learn.room.activity2.dao.EmployeeDao;
 import lille.learn.room.activity2.model.Company;
@@ -44,7 +45,7 @@ public class ActivityTest2 {
     private NoteRoomDatabase mDb;
     private EmployeeDao mEmployeeDao;
     private DepartmentDao departmentDao;
-    //private CompanyDepartmentsDao compDepartDao;
+    private CompanyDepartmentsDao compDepartDao;
 
     @Before
     public void createDb() {
@@ -55,8 +56,8 @@ public class ActivityTest2 {
         mNoteDao = mDb.noteDao();
         mCompany = mDb.companyDao();
         mEmployeeDao = mDb.employeeDao();
-        //departmentDao = mDb.departmentDao();
-        //compDepartDao = mDb.companyAndAllDepartmentsDao();
+        departmentDao = mDb.departmentDao();
+        compDepartDao = mDb.companyAndAllDepartmentsDao();
 
     }
 
@@ -158,7 +159,7 @@ public class ActivityTest2 {
     }
 
 
-    /**
+
     @Test
     public void DepartementCompanyWithRelation() throws Exception {
         Company c = new Company();
@@ -184,17 +185,24 @@ public class ActivityTest2 {
         e.setEmployeeId(1);
         e.setName("Patrick");
         mEmployeeDao.insert(e);
+        //creation departement 2
         Department depart = new Department();
+        //on lie le departement avec la compagnie 1
+
         depart.setCompanyId(companies.get(0).getCompanyId());
         depart.setName("Departement1");
         depart.setId(1);
         departmentDao.insert(depart);
+        //creation departement 2
+        //on lie le departement avec la compagnie 1
 
         depart.setCompanyId(companies.get(0).getCompanyId());
         depart.setName("Departement2");
         depart.setId(2);
         departmentDao.insert(depart);
 
+        assertEquals("Carrefour",compDepartDao.loadCompanyAllDepartments(2).getCompany().getName());
+        assertEquals(0,compDepartDao.loadCompanyAllDepartments(2).getDepartments().size());
 
         assertEquals("Company Tarby",compDepartDao.loadCompanyAllDepartments(1).getCompany().getName());
 
@@ -203,7 +211,7 @@ public class ActivityTest2 {
 
     }
 
-    **/
+
 
 
 }

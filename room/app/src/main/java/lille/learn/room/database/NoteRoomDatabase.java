@@ -9,13 +9,17 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 import lille.learn.room.activity2.dao.CompanyDao;
+import lille.learn.room.activity2.dao.CompanyDepartmentsDao;
+import lille.learn.room.activity2.dao.DepartmentDao;
 import lille.learn.room.activity2.dao.EmployeeDao;
 import lille.learn.room.activity2.model.Company;
+import lille.learn.room.activity2.model.CompanyAndAllDepartments;
+import lille.learn.room.activity2.model.Department;
 import lille.learn.room.activity2.model.Employee;
 import lille.learn.room.dao.NoteDao;
 import lille.learn.room.model.Note;
 
-@Database(entities = {Note.class, Company.class,Employee.class}, version = 1, exportSchema = false)
+@Database(entities = {Note.class, Company.class,Employee.class,Department.class}, version = 1, exportSchema = false)
 public abstract class NoteRoomDatabase extends RoomDatabase {
 
     // Les Daos
@@ -26,7 +30,8 @@ public abstract class NoteRoomDatabase extends RoomDatabase {
     //second activity
     public abstract CompanyDao companyDao();
     public abstract EmployeeDao employeeDao();
-
+    public abstract DepartmentDao departmentDao();
+    public abstract CompanyDepartmentsDao companyAndAllDepartmentsDao();
     // Un Singleton
     private static volatile NoteRoomDatabase INSTANCE;
 
@@ -61,12 +66,15 @@ public abstract class NoteRoomDatabase extends RoomDatabase {
         private final NoteDao mDao;
         private final EmployeeDao employeeDao;
         private final CompanyDao cDao;
+        private final DepartmentDao dDao;
+        private final CompanyDepartmentsDao cdDao;
 
         PopulateDbAsync(NoteRoomDatabase db) {
             mDao = db.noteDao();
             cDao = db.companyDao();
             employeeDao = db.employeeDao();
-
+            dDao = db.departmentDao();
+            cdDao = db.companyAndAllDepartmentsDao();
         }
 
         //création des données qui sera de base dans l'application
