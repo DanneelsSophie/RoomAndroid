@@ -6,7 +6,12 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-
+@Entity(foreignKeys = @ForeignKey(entity = Company.class,
+        parentColumns = "id",
+        childColumns = "company_id",
+        onDelete = ForeignKey.CASCADE),
+        indices = {
+                @Index(value="company_id")})
 public class Employee {
 
     @PrimaryKey

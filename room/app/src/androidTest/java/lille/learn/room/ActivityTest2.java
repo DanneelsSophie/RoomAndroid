@@ -54,7 +54,7 @@ public class ActivityTest2 {
                 .build();
         mNoteDao = mDb.noteDao();
         mCompany = mDb.companyDao();
-        //mEmployeeDao = mDb.employeeDao();
+        mEmployeeDao = mDb.employeeDao();
         //departmentDao = mDb.departmentDao();
         //compDepartDao = mDb.companyAndAllDepartmentsDao();
 
@@ -93,7 +93,7 @@ public class ActivityTest2 {
         assertEquals(d,companies.get(1).getItemUpdatedDate());
     }
 
-    /**@Test
+    @Test
     public void insertAndGetEmployee() throws Exception {
         Company c = new Company();
         Date d = new Date("08/03/1992");
@@ -158,7 +158,7 @@ public class ActivityTest2 {
     }
 
 
-
+    /**
     @Test
     public void DepartementCompanyWithRelation() throws Exception {
         Company c = new Company();
