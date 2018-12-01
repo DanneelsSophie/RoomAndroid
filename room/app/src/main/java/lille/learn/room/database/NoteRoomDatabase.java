@@ -90,33 +90,10 @@ public abstract class NoteRoomDatabase extends RoomDatabase {
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
         private final NoteDao mDao;
-        private final CompanyDao cDao;
-        private final EmployeeDao eDao;
-        private final DepartmentDao dDao;
-        private final CompanyDepartmentsDao cdDao;
-        private final RepoDao repoDao;
-        private final UserDao usrDao;
-        private final RepoDao1 repo1Dao;
-        private final UserDao1 usr1Dao;
-        private final UserRepoJoinDao userRepoDao;
-        private final UserWithReposDao userwithRepo;
-
-
+       
 
         PopulateDbAsync(NoteRoomDatabase db) {
-            cDao = db.companyDao();
             mDao = db.noteDao();
-            eDao = db.employeeDao();
-            dDao = db.departmentDao();
-            cdDao = db.companyAndAllDepartmentsDao();
-            repoDao = db.repoDao();
-            usrDao = db.userDao();
-            userRepoDao = db.userRepoJoinDao();
-            userwithRepo = db.userWithReposDao();
-            repo1Dao = db.repo1Dao();
-            usr1Dao = db.user1Dao();
-
-
         }
 
         @Override
