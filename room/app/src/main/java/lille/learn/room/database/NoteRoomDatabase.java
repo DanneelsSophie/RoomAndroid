@@ -57,11 +57,9 @@ public abstract class NoteRoomDatabase extends RoomDatabase {
 
         private final NoteDao mDao;
 
-        private final CompanyDao cDao;
 
         PopulateDbAsync(NoteRoomDatabase db) {
             mDao = db.noteDao();
-            cDao = db.companyDao();
         }
 
         //création des données qui sera de base dans l'application
