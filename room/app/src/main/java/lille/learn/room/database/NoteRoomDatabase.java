@@ -59,14 +59,9 @@ public abstract class NoteRoomDatabase extends RoomDatabase {
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
         private final NoteDao mDao;
-        private final EmployeeDao employeeDao;
-        private final CompanyDao cDao;
 
         PopulateDbAsync(NoteRoomDatabase db) {
             mDao = db.noteDao();
-            cDao = db.companyDao();
-            employeeDao = db.employeeDao();
-
         }
 
         //création des données qui sera de base dans l'application
